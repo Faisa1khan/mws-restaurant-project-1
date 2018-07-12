@@ -105,10 +105,13 @@ nav h1 a {
 }
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
+  display: flex;
+  justify-content: center;
   width: 100%;
-  height: 50px;
+  min-height: 50px;
   background-color: #3397DB;
   align-items: center;
+  margin-top: 10px;
 }
 .filter-options h2 {
   color: white;
@@ -126,27 +129,36 @@ nav h1 a {
   letter-spacing: 0;
   margin: 10px;
   padding: 0 10px;
-  width: 200px;
+  width: 100%;
+  max-width: 360px;
 }
 
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: auto;
+  grid-gap: 10px;
   background-color: #f3f3f3;
   list-style: outside none none;
   margin: 0;
   padding: 30px 15px 60px;
-  text-align: center;
+  align-items: center;
+  justify-content: center;
+
 }
+
 #restaurants-list li {
   background-color: #fff;
   border: 2px solid #ccc;
   font-family: Arial,sans-serif;
-  margin: 15px;
-  min-height: 380px;
+  margin: 10px auto;
+  min-height: 350px;
   padding: 0 30px 25px;
   text-align: left;
-  width: 270px;
+  max-width: 350px;
 }
+
 #restaurants-list .restaurant-img {
   background-color: #ccc;
   display: block;
@@ -272,4 +284,87 @@ nav h1 a {
 }
 #restaurant-hours td {
   color: #666;
+}
+/* 0 to 479 pixels, breakpoint at 480 pixels = 30rem*/
+@media screen and (max-width: 479px) {
+  .filter-options {
+    flex-direction: column;
+  }
+  
+  .filter-options select {
+  
+    margin: 5px 10px;
+    padding: 0 10px;
+    
+  }
+
+  #restaurants-list {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.8fr;
+  
+}
+}
+/*
+ * 480 to 599 pixels, breakpoint at 600 pixels = 37.5rem
+ */
+ @media screen and (min-width: 30rem) and (max-width: 37.4375rem) {
+  #restaurants-list {
+    grid-template-columns: 1fr;
+
+  
+}
+
+ }
+
+
+ /*
+ * 600 to 839 pixels, breakpoint at 840 pixels = 52.5rem
+ */
+@media screen and (min-width: 37.5rem) and (max-width: 52.4375rem) {
+  #restaurants-list {
+    grid-template-columns: repeat(2,1fr);
+    
+
+  
+}
+}
+
+
+
+/*
+ * 840 to 959 pixels, breakpoint at 960 pixels = 60rem
+ */
+ @media screen and (min-width: 52.5rem) and (max-width: 59.9375rem) {
+  #restaurants-list {
+    grid-template-columns: repeat(2,1fr);
+
+  
+}
+
+ }
+
+ /*
+ * 960 to 1279 pixels, breakpoint at 1280 pixels = 80rem
+ */
+@media screen and (min-width: 60rem) and (max-width: 79.9375rem) {
+
+  #restaurants-list {
+    grid-template-columns: repeat(3,1fr);
+
+  
+}
+
+}
+
+*
+ * 1280 pixels / 80rem and beyond
+ */
+@media screen and (min-width: 80rem) {
+
+  #restaurants-list {
+    grid-template-columns: repeat(4,1fr);
+
+  
+}
+
 }

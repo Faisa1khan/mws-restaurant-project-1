@@ -4,11 +4,11 @@
 body,td,th,p{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: calc(14px + .2vw);
-	color: #333;
+	color: #222;
 	line-height: 1.5;
 }
 body {
-	background-color: #fdfdfd;
+	background-color: #fff;
 	margin: 0;
 	position:relative;
 }
@@ -241,7 +241,7 @@ nav h1 a {
 }
 #restaurant-address {
   font-size: calc(1em + 0.25vw);
-  margin: 10px 0px;
+  margin: 10px;
   width: 100%;
 }
 #restaurant-cuisine {
@@ -298,6 +298,8 @@ nav h1 a {
 
 #restaurant-hours td {
   color: #666;
+  padding: 0 20px;
+  border: 0.5px solid;
 }
 /* 0 to 479 pixels, breakpoint at 480 pixels = 30rem*/
 @media screen and (max-width: 479px) {
@@ -347,16 +349,27 @@ nav h1 a {
 /*
  * 480 to 599 pixels, breakpoint at 600 pixels = 37.5rem
  */
- @media screen and (min-width: 30rem) and (max-width: 37.4375rem) {
+ @media screen and (min-width: 360px) and (max-width: 37.4375rem) {
   #restaurants-list {
     grid-template-columns: 1fr;    /*one card*/
 
   
 }
+#reviews-list li p:not(:last-child) {
+  /* background-color: #3397DB; */
+  /* margin-top: 0; */
+  /* text-align: center; */
+  display: flex;
+   width: 100%;
+  /* justify-content: center; */
+  /* height: 45px; */
+  /* margin: 0 auto; */
+  /* padding: 1px; */
+  /* align-items: center; */
+  flex-direction: column;
 
  }
-
-
+}
  /*
  * 600 to 839 pixels, breakpoint at 840 pixels = 52.5rem
  */
@@ -436,8 +449,10 @@ nav h1 a {
       padding: 150px 30px;
 
     }
-
-    #breadcrumb {
+    #reviews-container{
+     padding: 30px;
+    }
+    # breadcrumb {
       width:calc(50% - 80px);
     }
     .inside #footer {
